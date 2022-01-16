@@ -61,14 +61,16 @@ package singlyLinkedListImplementation;
 			}
 		}
 		
-		public Node deleteLast() 
+		public void deleteLast() 
 		{
 			Node current = head;
+			Node temp = head;
 			while(current.next!=null) {
+				temp = current;
 				current= current.next;
 			}
-			current = null;
-			return head;
+			current = temp;
+			current.next = null;	
 		}
 	}
 
