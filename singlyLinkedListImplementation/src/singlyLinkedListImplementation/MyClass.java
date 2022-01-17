@@ -72,6 +72,21 @@ package singlyLinkedListImplementation;
 			current = temp;
 			current.next = null;	
 		}
+
+		public void inserAfter(Node after,int d)
+		{
+			Node current = head;
+			Node temp = head;
+			while(temp.data != after.data)
+			{
+				temp = current;
+				current = current.next;
+			}
+			Node n = new Node();
+			n.data = d;
+			temp.next = n;
+			n.next = current;
+		}
 	}
 
 	public class MyClass {
@@ -83,7 +98,9 @@ package singlyLinkedListImplementation;
 		sl.insertLast(4);
 		sl.inserFirst(3);
 		sl.deleteLast();
-		
+		Node node = new Node();
+		node.data =5;
+		sl.inserAfter(node, 10);
 		sl.printElement();
 		if(sl.isEmpty()) {
 			System.out.println("Lis is Empty");
